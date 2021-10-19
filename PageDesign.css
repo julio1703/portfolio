@@ -4,6 +4,50 @@ body {
   height: 100%;
   overflow: hidden;
 }
+h3 {
+  margin: 0.5em 0%;
+}
+p {
+  font-size: 20px;
+}
+.zoomed-card::-webkit-scrollbar {
+  display: none;
+}
+.dot {
+  font-size: 60px;
+}
+.zoomed-card {
+  border-radius: 10%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 4px 10px rgb(124, 123, 123);
+  padding: 0 2em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  background-color: #fff;
+  left: 25%;
+  top: 4.5%;
+  width: 50%;
+  height: 75%;
+  transition: 1s;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  opacity: 0.5;
+  z-index: -1;
+}
+.exit-icon {
+  position: absolute;
+  left: 85%;
+  top: 2%;
+  width: 5vw;
+  height: 5vw;
+  z-index: inherit;
+}
 /* FIRST PAGE */
 .mainPage {
   margin: 0;
@@ -12,99 +56,82 @@ body {
   background: black;
   overflow: hidden;
 }
-.mainPage div:nth-of-type(2) {
-  text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white;
-}
-.mainPage div:nth-of-type(n + 3) {
+.button0 {
   font-size: 4vh;
   color: white;
 }
 .title {
   position: absolute;
+  font-style: italic;
   bottom: 0;
   right: 5%;
   font-size: 15vh;
+  text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white;
 }
-.mainPage div:nth-of-type(3) {
+.block1 {
   position: absolute;
   top: 29%;
   left: 43.5%;
 }
-.mainPage div:nth-of-type(4) {
+.block2 {
   position: absolute;
   top: 40%;
   left: 37%;
 }
-.mainPage div:nth-of-type(5) {
+.block3 {
   position: absolute;
   top: 48%;
   left: 32%;
 }
-.mainPage div:nth-of-type(6) {
+.block4 {
   position: absolute;
   top: 56%;
   left: 28%;
 }
-.mainPage div:nth-of-type(7) {
+.block5 {
   position: absolute;
   top: 71%;
   left: 24%;
 }
+.block6 {
+  position: absolute;
+  top: 82%;
+  left: 19.5%;
+}
 
 /* Cards */
-#card1 {
-  position: absolute;
-  display: flex;
-  border: 2px solid white;
-  width: 30%;
-  height: 50%;
-  top: -51%;
-  left: 65%;
-  transition-duration: 1s;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.card::-webkit-scrollbar {
+  display: none;
 }
-#card2 {
-  display: flex;
-  position: absolute;
-  border: 2px solid white;
+.card {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   width: 30%;
-  height: 50%;
-  top: -51%;
-  left: 65%;
-  transition-duration: 1s;
-}
-#card3 {
-  display: flex;
-  position: absolute;
+  max-height: 50%;
   border: 2px solid white;
-  width: 30%;
-  height: 50%;
-  top: -51%;
-  left: 65%;
-  transition-duration: 1s;
-}
-#card4 {
-  display: flex;
+  border-radius: 15px;
   position: absolute;
-  border: 2px solid white;
-  width: 30%;
-  height: 50%;
-  top: -51%;
-  left: 65%;
-  transition-duration: 1s;
-}
-#card5 {
-  display: flex;
-  position: absolute;
-  border: 2px solid white;
-  width: 30%;
-  height: 50%;
-  top: -51%;
+  overflow-y: auto;
+  top: -75vh;
   left: 65%;
   transition-duration: 1s;
 }
 
+/* Texts */
+.text {
+  color: #fff;
+  margin: 7% auto;
+  text-align: start;
+  width: 75%;
+  font-size: 20px;
+}
+.title1 {
+  font-weight: bold;
+  font-size: 24px;
+}
 /* Buttons */
-#button1 {
+.button1 {
   left: 38%;
   top: 26%;
   width: 5%;
@@ -112,7 +139,7 @@ body {
   position: absolute;
   border-radius: 50%;
 }
-#button2 {
+.button2 {
   left: 31.5%;
   top: 36.5%;
   width: 5%;
@@ -120,7 +147,7 @@ body {
   position: absolute;
   border-radius: 50%;
 }
-#button3 {
+.button3 {
   left: 27.5%;
   top: 44%;
   width: 4%;
@@ -128,7 +155,7 @@ body {
   position: absolute;
   border-radius: 50%;
 }
-#button4 {
+.button4 {
   left: 22.5%;
   top: 51.5%;
   width: 5.5%;
@@ -136,11 +163,19 @@ body {
   position: absolute;
   border-radius: 50%;
 }
-#button5 {
+.button5 {
   left: 18%;
   top: 67.5%;
   width: 5.5%;
   height: 11%;
+  position: absolute;
+  border-radius: 50%;
+}
+.button6 {
+  left: 15%;
+  top: 79%;
+  width: 4%;
+  height: 8%;
   position: absolute;
   border-radius: 50%;
 }
@@ -150,6 +185,83 @@ img {
   width: 100%;
   height: 100%;
   position: relative;
+}
+@media (max-width: 768px) {
+  .title1 {
+    font-size: 25px;
+  }
+  p,
+  li {
+    font-size: 15px;
+  }
+  .text {
+    text-align: start;
+  }
+}
+@media (max-width: 665px) {
+  .title {
+    font-size: 8vh;
+  }
+  .zoomed-card {
+    left: 12.5%;
+    width: 60%;
+  }
+  img {
+    left: -25%;
+  }
+  .title1 {
+    font-size: 12px;
+  }
+  p,
+  li {
+    font-size: 12px;
+  }
+  /* Cards */
+  .card {
+    width: 45%;
+    left: 52%;
+  }
+  /* Clickable text */
+  .button0 {
+    font-size: 1.75vh;
+  }
+  .block1 {
+    left: 33.5%;
+  }
+  .block2 {
+    left: 27%;
+  }
+  .block3 {
+    left: 22%;
+  }
+  .block4 {
+    left: 18%;
+  }
+  .block5 {
+    left: 14%;
+  }
+  .block6 {
+    left: 9.5%;
+  }
+  /* Buttons */
+  .button1 {
+    left: 28%;
+  }
+  .button2 {
+    left: 21.5%;
+  }
+  .button3 {
+    left: 7.5%;
+  }
+  .button4 {
+    left: 12.5%;
+  }
+  .button5 {
+    left: 8%;
+  }
+  .button6 {
+    left: 5%;
+  }
 }
 /* BackGround Animation */
 .stars {
